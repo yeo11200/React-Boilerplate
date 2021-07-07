@@ -1,0 +1,36 @@
+.RCA-calendar-container{
+  flex-grow: 1;
+  //background-color: rgb(127, 184, 127);
+}
+/* calendar-header */
+.RCA-calendar-date-header{
+  display: flex;
+  height: 20px;
+  //background-color: green;
+}
+
+.RCA-calendar-date-component{
+  width: 30px;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: rgb(107, 107, 108);
+  border: 0.1px solid white;
+  font-size : 10px;
+}
+
+.RCA-calendar-date-component:nth-child(odd){
+  border-left : none;
+  border-right: none;
+}
+
+.date-weekday{
+  color : rgba(255, 255, 255, 0.603)
+}
+
+.date-sun{
+  color: tomato;
+}
+
+.date-sat{
+  color: skyblue;
+}

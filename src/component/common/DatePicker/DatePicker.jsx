@@ -14,7 +14,7 @@ const DatePicker = (props) => {
     }
 
     /**
-     * 달력 ul 그리는 함수
+     * 달력 헤더 ul 그리는 함수
      *
      * return {JSX}
      */
@@ -29,11 +29,75 @@ const DatePicker = (props) => {
         })
     }
 
-    console.log(selectDate);
+    /**
+     * 달력 몸체 ul 그리는 함수
+     *
+     * return {JSX}
+     */
+    const fnDate = () => {
+        const firstDayOfMonth = moment(value).startOf('month');
+        const firstDateOfMonth = firstDayOfMonth.get('d');
+
+        const firstDayOfWeek = firstDayOfMonth.clone().add('d', -firstDateOfMonth);
+
+        console.log(firstDayOfWeek);
+        // const lastDayOfThisCalendar = dayOfThisCalendar.clone().add('d', 6 * 7);
+
+        const _Weeks = [];
+
+        for (let i = 0; i < 6; i++) {
+            console.log(firstDayOfWeek.clone().add('d', i * 7).format("YYYY-MM-DD"));
+
+            _Weeks.push((
+                fnDays(firstDayOfWeek.clone().add('d', i * 7).format("YYYY-MM-DD"))
+            ))
+        }
+        return _Weeks
+    }
+
+    const fnDays = (firstDayOfWeek) => {
+        const _days = [];
+
+        for (let i = 0; i < 7; i++) {
+
+            const Day = moment(firstDayOfWeek).add('d', i);
+            _days.push({
+                yearMonthDayFormat: Day.format("YYYY-MM-DD"),
+                getDay: Day.format('D'),
+                isHolyDay: false
+            });
+        }
+
+        return _days.map((dayInfo, i) => {
+
+            let className = "date-weekday-label";
+
+            if (i === 0) {
+                className = "date-sun";
+            } else if (i === 6) {
+                className = "date-sat"
+            }
+
+            return (
+                <div className={"RCA-calendar-day " + className} onClick={() => fnChangeDate(dayInfo.yearMonthDayFormat)}>
+                    <label className="RCA-calendar-day-label">
+                        {dayInfo.getDay}
+                    </label>
+                    {/* <label className="RCA-calendar-day">{dayInfo.getDay}</label> */}
+                </div>
+            )
+        })
+    }
+
+    fnDate();
+
     return(
         <div className={cx("RCA-calendar-container")}>
             <div className={cx('RCA-calendar-date-header')}>
                 {fnCalendarHeader()}
+            </div>
+            <div className={cx('RCA-calendar-day-label')}>
+                {fnDate()}
             </div>
         </div>
     )

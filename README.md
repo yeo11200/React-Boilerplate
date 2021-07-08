@@ -14,7 +14,8 @@
 3. DropDown
 4. Excel
 5. 카톡 알림
-
+6. axios
+7. paging
 
 scss 도입
 - scss는 css의 전처리로, css에 프로그래밍적으로 풀어쓸수 있다.

@@ -1,6 +1,10 @@
 # React-Boilerplate
 [React] 프로젝트 기본틀
 
+우선 순위
+- 린트설정
+- webpack.config 설정
+
 1. DataPricker
    - 날짜 데이터
     ```npm

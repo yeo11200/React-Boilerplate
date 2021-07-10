@@ -79,7 +79,7 @@ const DatePicker = (props) => {
             }
 
             return (
-                <div className={"RCA-calendar-day " + className} onClick={() => fnChangeDate(dayInfo.yearMonthDayFormat)}>
+                <div className={"RCA-calendar-day " + className} onClick={() => fnChangeDate(dayInfo.yearMonthDayFormat)} key={`RCA-calendar-week-${i}`}>
                     <label className="RCA-calendar-day-label">
                         {dayInfo.getDay}
                     </label>
@@ -92,11 +92,11 @@ const DatePicker = (props) => {
     fnDate();
 
     return(
-        <div className={cx("RCA-calendar-container")}>
+        <div className={cx("RCA-calendar-container", "RCA-calendar-container")}>
             <div className={cx('RCA-calendar-date-header')}>
                 {fnCalendarHeader()}
             </div>
-            <div className={cx('RCA-calendar-day-label')}>
+            <div className={cx('RCA-calendar-day-label', 'RCA-calendar-week')}>
                 {fnDate()}
             </div>
         </div>

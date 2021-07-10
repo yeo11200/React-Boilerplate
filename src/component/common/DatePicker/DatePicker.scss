@@ -34,3 +34,41 @@
 .date-sat{
   color: skyblue;
 }
+
+.RCA-calendar-day-container{
+  flex-grow: 1;
+  //display : flex;
+  //flex-wrap: wrap;
+}
+
+.RCA-calendar-day{
+  box-sizing: border-box;
+  position: relative;
+  //flex-basis: 14.2857143%;
+  border: 0.1px solid white;
+  border-top: none;
+  background-color: rgb(225,224,224);
+}
+
+.RCA-calendar-week{
+  display: flex;
+  flex-grow: 1;
+}
+
+.RCA-calendar-day:nth-child(odd){
+  float: left;
+  border-left : none;
+  border-right: none;
+}
+
+.RCA-calendar-day-label{
+  display: inline-block;
+  font-size: 1.2rem;
+  float: left;
+  text-align: center;
+  line-height: 25px;
+}
+
+.date-weekday-label{
+  color : rgb(71, 71, 71)
+}

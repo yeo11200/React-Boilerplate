@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import DatePicker from "./component/common/DatePicker/DatePicker";
+import Paging from "./component/common/Paging";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         </a>
       </header>
       <DatePicker />
+      <Paging />
     </div>
   );
 }

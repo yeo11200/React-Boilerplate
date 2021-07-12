@@ -1,0 +1,20 @@
+.pagination {
+  display: inline-block;
+}
+
+.pagination > ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.pagination > ul > li {
+  color: black;
+  float: left; // 한줄로 나타낸다.
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination > ul > li.active {
+  background: #61dafb !important;
+  color: aliceblue !important;
+}
